@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Japanese Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">Pedro Sena Fonseca</div>
+                <ul class="nav-links">
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#reels">Reels</a></li>
+                    <li><a href="#cv">CV</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Featured Section -->
+        <section id="featured" class="featured-section">
+            <h2 class="section-title">Featured Works</h2>
+            <div class="main-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="mainTrack">
+                        <div class="carousel-item active">
+                            <div class="video-container">
+                                <iframe src="https://player.vimeo.com/video/1118670242?autoplay=1&loop=1&muted=1&background=1"
+                                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3>Composition</h3>
+                                <p>Digital Art Work</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="video-container">
+                                <iframe src="https://player.vimeo.com/video/1118677297?autoplay=1&loop=1&muted=1&background=1"
+                                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3>CGI Reel</h3>
+                                <p>Unreal Engine, Cinema 4D, 3Ds Max 2021 - 2024</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="video-container">
+                                <iframe src="https://player.vimeo.com/video/1118681638?autoplay=1&loop=1&muted=1&background=1"
+                                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3>Measuring Success</h3>
+                                <p>Unreal Engine at Guggenheim Museum, 2024</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="video-container">
+                                <iframe src="https://player.vimeo.com/video/1118681515?autoplay=1&loop=1&muted=1&background=1"
+                                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3>Theme Park</h3>
+                                <p>Unreal Engine at Guggenheim Museum, 2024</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="video-container">
+                                <iframe src="https://player.vimeo.com/video/1118685564?autoplay=1&loop=1&muted=1&background=1"
+                                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3>Experimental Rabbit</h3>
+                                <p>Found Footage, After Effects 2024</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="video-container">
+                                <iframe src="https://player.vimeo.com/video/1118670214?autoplay=1&loop=1&muted=1&background=1"
+                                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3>Boyhood</h3>
+                                <p>Cinematics Unreal Engine</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" id="mainPrev">‹</button>
+                    <button class="carousel-btn next" id="mainNext">›</button>
+                </div>
+                <div class="carousel-indicators" id="mainIndicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                    <span class="indicator" data-index="3"></span>
+                    <span class="indicator" data-index="4"></span>
+                    <span class="indicator" data-index="5"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Projects Section -->
+        <section class="new-projects-section">
+            <h2 class="section-title">App - FrontEnd</h2>
+            <div class="recent-projects-grid">
+                <a href="kektok/SITE_INTERFACEFINALPROJECT/index.html" class="recent-project-card">
+                    <div class="project-preview">
+                        <iframe src="kektok/SITE_INTERFACEFINALPROJECT/index.html" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <div class="project-details">
+                        <h3>Kektok</h3>
+                        <p>Widget para replicação de conteúdo em HTML, CSS e JavaScript</p>
+                        <span class="project-link">View Project →</span>
+                    </div>
+                </a>
+                <a href="folderflight/FLIGHTCLAUDE1/index.html" class="recent-project-card">
+                    <div class="project-preview">
+                        <iframe src="folderflight/FLIGHTCLAUDE1/index.html" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <div class="project-details">
+                        <h3>Folder Flight</h3>
+                        <p>Flight search platform with Amadeus API</p>
+                        <span class="project-link">View Details →</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Projects</h2>
+            <div class="secondary-carousel">
+                <div class="carousel-wrapper">
+                    <button class="scroll-btn left" id="projectsLeft">‹</button>
+                    <div class="projects-container" id="projectsContainer">
+                        <div class="project-item" data-video="https://player.vimeo.com/video/1118672574">
+                            <div class="project-content">
+                                <div class="project-thumbnail">
+                                    <iframe src="https://player.vimeo.com/video/1118672574?autoplay=1&loop=1&muted=1&background=1"
+                                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                </div>
+                                <h4>Prisma</h4>
+                                <p class="project-subtitle">2025</p>
+                            </div>
+                        </div>
+                        <div class="project-item" data-video="https://player.vimeo.com/video/1118681717">
+                            <div class="project-content">
+                                <div class="project-thumbnail">
+                                    <iframe src="https://player.vimeo.com/video/1118681717?autoplay=1&loop=1&muted=1&background=1"
+                                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                </div>
+                                <h4>Columbus</h4>
+                                <p class="project-subtitle">Unreal Engine at Guggenheim Museum, 2024</p>
+                            </div>
+                        </div>
+                        <div class="project-item" data-video="https://player.vimeo.com/video/1118670378">
+                            <div class="project-content">
+                                <div class="project-thumbnail">
+                                    <iframe src="https://player.vimeo.com/video/1118670378?autoplay=1&loop=1&muted=1&background=1"
+                                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                </div>
+                                <h4>Kekchan Game</h4>
+                                <p class="project-subtitle">Unity, Rendered Sprites, 2025</p>
+                            </div>
+                        </div>
+                        <div class="project-item" data-video="https://player.vimeo.com/video/1118670180">
+                            <div class="project-content">
+                                <div class="project-thumbnail">
+                                    <iframe src="https://player.vimeo.com/video/1118670180?autoplay=1&loop=1&muted=1&background=1"
+                                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                </div>
+                                <h4>Book</h4>
+                                <p class="project-subtitle">Unreal Engine, 2023</p>
+                            </div>
+                        </div>
+                        <div class="project-item" data-video="https://player.vimeo.com/video/1118670581">
+                            <div class="project-content">
+                                <div class="project-thumbnail">
+                                    <iframe src="https://player.vimeo.com/video/1118670581?autoplay=1&loop=1&muted=1&background=1"
+                                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                </div>
+                                <h4>Sandwich</h4>
+                                <p class="project-subtitle">Unreal Engine, 2023</p>
+                            </div>
+                        </div>
+                        <div class="project-item" data-video="https://player.vimeo.com/video/1118670127">
+                            <div class="project-content">
+                                <div class="project-thumbnail">
+                                    <iframe src="https://player.vimeo.com/video/1118670127?autoplay=1&loop=1&muted=1&background=1"
+                                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                </div>
+                                <h4>Animation Merged</h4>
+                                <p class="project-subtitle">Unreal Engine, 2023</p>
+                            </div>
+                        </div>
+                        <div class="project-item" data-video="https://player.vimeo.com/video/1118679172">
+                            <div class="project-content">
+                                <div class="project-thumbnail">
+                                    <iframe src="https://player.vimeo.com/video/1118679172?autoplay=1&loop=1&muted=1&background=1"
+                                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                </div>
+                                <h4>Warrior Animation</h4>
+                                <p class="project-subtitle">3DSMAX, Fuse, Unreal Engine, 2023</p>
+                            </div>
+                        </div>
+                        <div class="project-item" data-video="https://player.vimeo.com/video/1118670102">
+                            <div class="project-content">
+                                <div class="project-thumbnail">
+                                    <iframe src="https://player.vimeo.com/video/1118670102?autoplay=1&loop=1&muted=1&background=1"
+                                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                </div>
+                                <h4>Magma Branding</h4>
+                                <p class="project-subtitle">2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="scroll-btn right" id="projectsRight">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reels Section -->
+        <section id="reels" class="reels-section">
+            <h2 class="section-title">Reels</h2>
+            <div class="reels-container">
+                <div class="reel-item" data-video="https://player.vimeo.com/video/1118673781">
+                    <div class="reel-thumbnail">
+                        <iframe src="https://player.vimeo.com/video/1118673781?autoplay=1&loop=1&muted=1&background=1"
+                                frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <h4>Composição 1.5</h4>
+                </div>
+                <div class="reel-item" data-video="https://player.vimeo.com/video/1118670344">
+                    <div class="reel-thumbnail">
+                        <iframe src="https://player.vimeo.com/video/1118670344?autoplay=1&loop=1&muted=1&background=1"
+                                frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <h4>Kekchan Dia 3</h4>
+                </div>
+                <div class="reel-item" data-video="https://player.vimeo.com/video/1118670286">
+                    <div class="reel-thumbnail">
+                        <iframe src="https://player.vimeo.com/video/1118670286?autoplay=1&loop=1&muted=1&background=1"
+                                frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <h4>Dancing</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="cv-section">
+            <h2 class="section-title">CV</h2>
+            <div class="cv-container">
+                <div class="cv-header">
+                    <div class="cv-intro">
+                        <h3>Pedro Sena Fonseca Anselmo</h3>
+                        <p class="cv-pronouns">ele/him</p>
+                        <p class="cv-title">Independent Market Researcher and Creative Technologist</p>
+                        <div class="contact-info">
+                            <p><strong>Email:</strong> pedrofanselmo@gmail.com</p>
+                            <p><strong>Portfolio:</strong> pedrosenafonseca.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-content">
+                    <div class="cv-section-item">
+                        <h4>Education</h4>
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>HfBK – Hochschule für bildende Künste, Hamburg, Germany</strong>
+                                <span class="cv-date">2017 – 2020</span>
+                            </div>
+                            <p>Bachelor of Arts in Visual Arts</p>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>PUC Minas – Pontifícia Universidade Católica de Minas Gerais, Belo Horizonte, Brazil</strong>
+                                <span class="cv-date">2016 – 2017</span>
+                            </div>
+                            <p>Architecture and Urbanism</p>
+                        </div>
+                    </div>
+
+                    <div class="cv-section-item">
+                        <h4>Professional Profile</h4>
+                        <p>Independent Market Researcher and Creative Technologist with over a decade of experience bridging artistic creativity, interactive media, and data-driven strategies. Specialized in analyzing markets, consumer behavior, and digital engagement while integrating knowledge of computer graphics, immersive environments, and creative production.</p>
+                        <p>Proficient in qualitative and quantitative research, trend analysis, and competitor benchmarking, combined with hands-on expertise in Unity and Unreal Engine development, CGI pipelines, and digital campaigns. Skilled at designing and executing market studies that inform product positioning, audience targeting, and campaign optimization across e-commerce, cultural, and creative industries.</p>
+                        <p>Capable of aligning research findings with actionable strategies, ensuring both analytical depth and innovative approaches to storytelling, branding, and user experience. Experienced in creating reports, visualizations, and presentations tailored to stakeholders, leveraging digital tools for data interpretation and communication.</p>
+                        <p>Fluent in English and Portuguese, with intermediate German, offering a versatile international perspective for research and strategy.</p>
+                    </div>
+
+                    <div class="cv-section-item">
+                        <h4>Proficiency</h4>
+                        <p>Proficient in Unity development (C# scripting, physics, UI, optimization) and Unreal Engine workflows (blueprints, shaders, real-time cinematics), creating experiences that merge art direction with functional interactivity. Skilled in 3D content creation (3ds MAX, Blender, Cinema 4D) and CGI pipelines, ensuring both aesthetic excellence and technical performance across games, VR projects, and audiovisual installations.</p>
+                        <p>Complemented by strong capabilities in digital design and web technologies (Adobe Suite, Figma, HTML, CSS), front-end development (Shopify, JavaScript), and data-driven strategies for digital campaigns. Experienced in debugging, optimization, and cross-disciplinary collaboration, bridging design, programming, and production in high-demand projects.</p>
+                        <p>Fluent in English and Portuguese, with intermediate German, bringing a versatile, international perspective to both creative projects and interactive development pipelines.</p>
+                    </div>
+
+                    <div class="cv-section-item">
+                        <h4>Independent & Entrepreneurial Projects</h4>
+                        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Independent Unity Developer</strong>
+                                <span class="cv-date">2025</span>
+                            </div>
+                            <ul>
+                                <li>Developed mechanics and visual systems for interactive experiences in Unity, combining technical programming (C# scripting) with artistic 3D asset integration.</li>
+                                <li>Designed responsive UI elements and menus with attention to user experience.</li>
+                                <li>Applied principles of optimization (LOD systems, batching, GPU instancing) to balance performance and fidelity.</li>
+                                <li>Debugged gameplay logic and visual inconsistencies through iterative testing and profiling.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Independent Digital Campaign – Kektok.com</strong>
+                                <span class="cv-date">2025</span>
+                            </div>
+                            <ul>
+                                <li>Built a Shopify-based e-commerce platform, programming the front end and ensuring responsive design across devices.</li>
+                                <li>Designed a CGI-based advertising campaign video with a playful, child-oriented aesthetic.</li>
+                                <li>Conducted market research and keyword analysis in Google Ads to optimize cost-per-click, achieving a CPC of R$ 0.07.</li>
+                                <li>Combined storytelling and data-driven strategies to maximize audience engagement.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Independent CGI Production – Swiss Pavilion, Venice Biennale</strong>
+                                <span class="cv-date">2024</span>
+                            </div>
+                            <ul>
+                                <li>Produced high-resolution CGI visuals for the installation by artist Guerreiro do Divino Amor.</li>
+                                <li>Applied advanced rendering techniques in Cinema 4D and Blender for architectural-scale visualizations.</li>
+                                <li>Managed asset pipelines and ensured consistency of materials and lighting across large-format projections.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Independent Unreal Engine Support – Guggenheim Museum, New York</strong>
+                                <span class="cv-date">2024</span>
+                            </div>
+                            <ul>
+                                <li>Collaborated as Unreal Engine technician in the institution's public program.</li>
+                                <li>Supported real-time rendering workflows for installations, handling shaders, particle systems, and projection mapping.</li>
+                                <li>Assisted artists and curators in adapting creative content to interactive environments.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Independent Unreal Engine Consulting – Singapore Biennale</strong>
+                                <span class="cv-date">2024</span>
+                            </div>
+                            <ul>
+                                <li>Developed custom rendering techniques for a 45-minute CGI-based animation in the Metaverse, directed by Ruda Babau.</li>
+                                <li>Optimized large-scale scenes with advanced lighting and texture streaming.</li>
+                                <li>Implemented cinematic camera setups and post-production workflows within Unreal.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Independent Audiovisual Production – Daniel Jablonsky</strong>
+                                <span class="cv-date">2023-2025</span>
+                            </div>
+                            <ul>
+                                <li>Produced two short films in Unreal Engine, integrating real-time rendering with experimental narrative aesthetics.</li>
+                                <li>Exhibited at CLAC Contemporary Showcase and Janaína Torres Gallery.</li>
+                                <li>Coordinated pipelines from concept design to final screening, ensuring real-time rendering output maintained gallery-grade quality.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Independent Technical Lead – Short Film As Zangadas</strong>
+                                <span class="cv-date">2023</span>
+                            </div>
+                            <ul>
+                                <li>Directed rendering pipeline from Maya/Blender into final compositing.</li>
+                                <li>Implemented complex character animations and environmental simulations.</li>
+                                <li>Delivered under Aldir Blanc cultural incentive law funding constraints.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Independent Digital Management – Amissima</strong>
+                                <span class="cv-date">2022</span>
+                            </div>
+                            <ul>
+                                <li>Managed social media strategy for the fashion brand's 20th anniversary (650,000 followers).</li>
+                                <li>Created motion graphics and digital campaigns aligned with brand identity.</li>
+                                <li>Analyzed metrics to increase engagement and expand audience reach.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Independent CGI Development – Arena Prime</strong>
+                                <span class="cv-date">2019</span>
+                            </div>
+                            <ul>
+                                <li>Built architectural previsualizations and promotional CGI for a sports arena project.</li>
+                                <li>Modeled and rendered interior and exterior scenes in Unreal Engine with dynamic lighting.</li>
+                                <li>Designed walkthroughs and video outputs for stakeholder presentations.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <strong>Level Designer – Absolute Software GMBH</strong>
+                                <span class="cv-date">2018</span>
+                            </div>
+                            <ul>
+                                <li>Developed levels and assets for VR titles, integrating gameplay flow with immersive 3D environments.</li>
+                                <li>Collaborated with developers to test and launch games on Unity and Unreal.</li>
+                                <li>Focused on environment storytelling, spatial navigation, and user experience.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cv-section-item">
+                        <h4>Technical Skills</h4>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <strong>3D & Game Engines:</strong> 3ds MAX, Blender, Unity, Unreal Engine, Cinema 4D
+                            </div>
+                            <div class="skill-category">
+                                <strong>Rendering & CGI:</strong> Real-time rendering, post-production pipelines, PBR materials, lighting optimization, motion graphics
+                            </div>
+                            <div class="skill-category">
+                                <strong>Design & Web:</strong> Adobe Suite (Photoshop, After Effects, Premiere, Illustrator), Figma, HTML, CSS
+                            </div>
+                            <div class="skill-category">
+                                <strong>Programming:</strong> C# scripting (Unity), JavaScript (front-end), basic shader editing (HLSL/GLSL)
+                            </div>
+                            <div class="skill-category">
+                                <strong>Workflow Management:</strong> Optimization techniques, debugging, project planning, cross-team collaboration, development of applications
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cv-section-item">
+                        <h4>Languages</h4>
+                        <div class="languages-grid">
+                            <div><strong>English:</strong> Fluent</div>
+                            <div><strong>German:</strong> Intermediate</div>
+                            <div><strong>Portuguese:</strong> Native</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-video-container">
+                <iframe id="modalVideo" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

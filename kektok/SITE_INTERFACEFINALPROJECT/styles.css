@@ -1,0 +1,22 @@
+.video-container {
+  position: relative;
+  width: 560px;  /* Tamanho do player de vídeo */
+  height: 315px;
+}
+
+button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e04f2d;
+}

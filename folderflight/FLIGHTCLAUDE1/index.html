@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Voos - Brasil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <div class="logo-square">✈</div>
+        <span>Passagens Aéreas</span>
+      </div>
+    </header>
+
+    <!-- Formulário de busca principal -->
+    <div class="main-search">
+      <div class="search-row">
+        <div class="autocomplete-wrapper">
+          <label>Origem</label>
+          <input type="text" id="origem" placeholder="De onde?" autocomplete="off">
+          <div class="autocomplete-list" id="origem-autocomplete"></div>
+        </div>
+        
+        <div class="arrow-icon">✈</div>
+        
+        <div class="autocomplete-wrapper">
+          <label>Destino</label>
+          <input type="text" id="destino" placeholder="Para onde?" autocomplete="off">
+          <div class="autocomplete-list" id="destino-autocomplete"></div>
+        </div>
+        
+        <div class="date-wrapper">
+          <label>Data</label>
+          <input type="date" id="data-partida">
+        </div>
+        
+        <button class="search-btn primary" id="search-btn">Buscar</button>
+      </div>
+    </div>
+
+    <!-- Resultados -->
+    <main class="results-section">
+      <div class="loading" id="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Buscando voos...</p>
+      </div>
+
+      <div class="flights-table" id="flights-table" style="display: none;">
+        <table>
+          <thead>
+            <tr>
+              <th>Rota</th>
+              <th>Data</th>
+              <th>Voo</th>
+              <th>Companhia</th>
+              <th>Partida</th>
+              <th>Chegada</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody id="flights-tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="price-legend" id="price-legend" style="display: none;">
+        <span class="legend-label">Escala de preços:</span>
+        <div class="legend-gradient">
+          <span>Barato</span>
+          <span>Caro</span>
+        </div>
+      </div>
+
+      <div class="loading" id="initial-loading">
+        <div class="spinner"></div>
+        <p>Buscando as melhores ofertas...</p>
+      </div>
+
+      <div class="offers-section" id="offers-section" style="display: none;">
+        <h3>Flight Offers</h3>
+        <div class="offers-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Rota</th>
+                <th>Data</th>
+                <th>Companhia</th>
+                <th>Partida</th>
+                <th>Preço</th>
+              </tr>
+            </thead>
+            <tbody id="offers-tbody"></tbody>
+          </table>
+        </div>
+        <div class="search-prompt">
+          <p>Ou faça sua busca personalizada acima</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="offers/static-offers.js"></script>
+  <script src="offers/preload-offers.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

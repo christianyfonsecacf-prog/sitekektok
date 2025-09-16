@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Post</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body, html {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+body::before {
+    content:"";
+    position: fixed;
+    top:0; left:0; width:100%; height:100%;
+    background:
+    linear-gradient(to right, rgba(128,0,128,0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139,0,139,0.15) 1px, transparent 1px);
+    background-size:50px 50px;
+    z-index:-1;
+}
+
+.main-container { width:90%; max-width:900px; padding:20px; margin-top:20px; overflow-y:auto; max-height:90vh; }
+
+.post {
+    background-color: rgba(0,0,0,0.9);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding:20px;
+    margin-bottom:30px;
+    position: relative;
+}
+
+.post-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom:10px;
+}
+
+.avatar {
+    width: 80px;
+    aspect-ratio:1/1;
+    border-radius:8px;
+    border:2px solid #fff;
+    object-fit: cover;
+}
+
+.info { flex-grow:1; }
+.info h2 { font-size:1.5em; margin-bottom:5px; }
+.info p { font-size:1em; color:#ccc; }
+
+.copy-btn {
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color:#000;
+    color:#fff;
+    border:2px solid #fff;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.copy-btn:hover { opacity:0.8; }
+
+.post-video { 
+    margin-top:20px; 
+    border-radius:10px; 
+}
+
+.post-video iframe {
+    border-radius: 10px;
+    display: block;
+}
+
+.comment-section-container {
+    margin-top:20px;
+    padding-top:20px;
+    border-top:2px solid #fff;
+    text-align:center;
+}
+
+.share-btn {
+    background-color: rgba(0,0,0,0.9);
+    border: 2px solid #fff;
+    border-radius:10px;
+    color:#aaa;
+    font-size:0.9em;
+    cursor:pointer;
+    padding:5px 15px;
+    margin-bottom:15px;
+}
+.share-btn:hover { opacity:0.7; }
+
+.comment-toggle-btn {
+    background-color:#444;
+    color:#fff;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-bottom:15px;
+}
+.comment-toggle-btn:hover { opacity:0.8; }
+
+.comments-section { display:none; background-color:#222; padding:20px; border-radius:10px; border:2px solid #fff; margin-top:10px; max-height:300px; overflow-y:auto; text-align:left; }
+
+.comments-section h3 { margin-bottom:10px; font-size:1.5em; }
+
+.comment { display:flex; margin-bottom:15px; background-color:#333; padding:10px; border-radius:5px; border:1px solid #fff; }
+.comment input[type="text"] { flex-grow:1; background-color:#444; color:#fff; padding:10px; border:none; border-radius:5px; }
+.comment button { background-color:#555; color:#fff; padding:10px 15px; border:none; border-radius:5px; margin-left:10px; cursor:pointer; }
+.comment button:hover { opacity:0.8; }
+
+.comment-list .comment-item { display:flex; margin-bottom:15px; background-color:#444; padding:10px; border-radius:5px; border:1px solid #fff; }
+.comment-avatar { width:40px; aspect-ratio:1/1; border-radius:8px; margin-right:15px; object-fit:cover; }
+.comment-text { color:#fff; font-size:1em; flex-grow:1; }
+
+@media(max-width:768px){
+    .avatar { width:60px; }
+    .comment-avatar { width:30px; }
+    .copy-btn { width:70px; height:45px; }
+}
+</style>
+</head>
+<body>
+
+<div class="main-container" id="feed">
+    <!-- Post template -->
+    <div class="post">
+        <div class="post-header">
+            <img src="https://m.media-amazon.com/images/I/712qWKEsnnL._UF1000,1000_QL80_.jpg" alt="Post Author" class="avatar">
+            <div class="info">
+                <h2>The Legend of Napoleon Bonaparte</h2>
+                <p>This video shares information about Napoleon Bonaparte and his impact on the world.</p>
+            </div>
+            <button class="copy-btn" onclick="copyPost(this)">CLICK HERE</button>
+
+        </div>
+        <div class="post-video">
+            <iframe src="https://player.vimeo.com/video/1118685748?autoplay=1&loop=1&muted=1&background=1" width="100%" height="480" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="comment-section-container">
+            <button class="share-btn" onclick="shareWhatsApp('https://vimeo.com/1118685748')">Share</button>
+            <button class="comment-toggle-btn" onclick="toggleComments(this)">Comments</button>
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div class="comment">
+                    <input type="text" placeholder="Leave your comment...">
+                    <button onclick="postComment(this)">Post</button>
+                </div>
+                <div class="comment-list"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const suggestedVideos = ['1118685748']; // Lista de vídeos Vimeo
+
+function toggleComments(btn){
+    const section = btn.nextElementSibling;
+    section.style.display = section.style.display==='block'?'none':'block';
+}
+
+function postComment(btn){
+    const input = btn.previousElementSibling;
+    const text = input.value.trim();
+    if(!text) return;
+    const list = btn.closest('.comments-section').querySelector('.comment-list');
+    const newComment = document.createElement('div');
+    newComment.className='comment-item';
+    newComment.innerHTML=`<img src="https://m.media-amazon.com/images/I/712qWKEsnnL._UF1000,1000_QL80_.jpg" class="comment-avatar"><div class="comment-text">${text}</div>`;
+    list.appendChild(newComment);
+    input.value='';
+}
+
+function shareWhatsApp(url){
+    const text = encodeURIComponent("Check this video: "+url);
+    window.open(`https://wa.me/?text=${text}`,'_blank');
+}
+
+// COPY function to duplicate the post with a new suggested video
+function copyPost(btn){
+    const post = btn.closest('.post');
+    const clone = post.cloneNode(true);
+    const feed = document.getElementById('feed');
+
+    // Reset comments
+    clone.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
+    clone.querySelectorAll('.comment-list').forEach(list => list.innerHTML = '');
+    clone.querySelectorAll('.comments-section').forEach(sec => sec.style.display='none');
+
+    // Assign a random video from suggestedVideos
+    const newVideo = suggestedVideos[Math.floor(Math.random()*suggestedVideos.length)];
+    const videoContainer = clone.querySelector('.post-video');
+    videoContainer.innerHTML = `<iframe src="https://player.vimeo.com/video/${newVideo}?autoplay=1&loop=1&muted=1&background=1" width="100%" height="480" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+
+    // Update share button
+    const shareBtn = clone.querySelector('.share-btn');
+    shareBtn.onclick = function(){
+        shareWhatsApp(`https://vimeo.com/${newVideo}`);
+    };
+
+    // Reattach copy button
+    clone.querySelector('.copy-btn').onclick = function(){ copyPost(this); };
+
+    // Reattach comment toggle
+    clone.querySelector('.comment-toggle-btn').onclick = function(){ toggleComments(this); };
+
+    feed.insertBefore(clone, feed.firstChild);
+}
+</script>
+
+</body>
+</html>
