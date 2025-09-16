@@ -341,16 +341,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalClose = document.querySelector('.modal-close');
     const modalOverlay = document.querySelector('.modal-overlay');
 
-    // Add click event to all project items
+    // Add click event to all project items (entire container including description)
     projectItems.forEach(item => {
+        // Make the entire item clickable
+        item.style.cursor = 'pointer';
+        
         item.addEventListener('click', () => {
             const videoUrl = item.dataset.video;
             if (videoUrl) {
-                // Add autoplay and muted parameters for the modal
-                modalVideo.src = videoUrl + '?autoplay=1&muted=0';
+                // Remove Vimeo branding, enable loop, autoplay, and remove controls
+                const cleanUrl = videoUrl + '?autoplay=1&loop=1&muted=0&background=1&title=0&byline=0&portrait=0&controls=1&quality=1080p';
+                modalVideo.src = cleanUrl;
                 videoModal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
             }
+        });
+        
+        // Add hover effect to indicate it's clickable
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'scale(1.02)';
+            item.style.transition = 'transform 0.3s ease';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'scale(1)';
         });
     });
 
